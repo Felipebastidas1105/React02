@@ -1,0 +1,61 @@
+
+#root{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.formContainer form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #070707;
+}
+.formContainer input{
+  width: 60%;
+  height: 30px;
+  padding: 0.5rem;
+  border: 1px solid #070707;
+  font-family: inherit;
+  border-radius: 6px;
+}
+.formContainer input[type="submit"]{
+  width: 60%;
+  height: 25%;
+  padding: 0.5rem;
+  border: 1px solid #070707;
+  font-family: inherit;
+  border-radius: 6px;
+  font-size: large;
+  background-color: #070707;
+  color: #f9f9f9;
+  cursor: pointer;
+}
+.authorization{
+  width: 100vw;
+  height: 150px;
+  background-color: #e7dddd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.data{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: xx-large;
+  font-weight: bold;
+  margin: 0 2rem;
+}
+
