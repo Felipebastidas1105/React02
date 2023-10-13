@@ -1,0 +1,19 @@
+
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+}
+.button{
+  margin: 0 10px;
+}
+.black{
+  color: black;
+}
+.white{
+  color: white;
+}
+
+
+

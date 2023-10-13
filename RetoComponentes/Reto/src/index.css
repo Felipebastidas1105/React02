@@ -1,0 +1,128 @@
+
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+}
+.button{
+  margin: 0 10px;
+}
+.light-button{
+  color: black;
+}
+.dark-button{
+  color: white;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background-color: #282c34;
+  color: white;
+}
+.FotoPerfil{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.main{
+  width: 30%;
+  height:100%;
+}
+.Info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.datos{
+  display: flex;
+  flex-direction: column;
+}
+.date{
+  color: aqua;
+  text-decoration:solid ;
+}
+.Card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.UserInfo{
+ width: 100%;
+ padding: 2%;
+ background-color: #282c34;
+ border-top-right-radius: 10px;
+ border-top-left-radius: 10px;
+}
+.imgContent{
+  width: 100%;
+  height: 100%;
+}
+.reactions{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  background-color: #7e828b;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.btnIcon{
+  background: none;
+  border: none;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modalContent textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.modalContent button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #007bff;
+  cursor: pointer;
+}
+
+.modalContent button:last-child {
+  background-color: #dc3545;
+}

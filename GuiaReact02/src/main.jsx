@@ -22,8 +22,8 @@ class SaludoCompleto extends Component {
   }
 }
 
-class ProfilePage extends Component { 
-  render(){
+class ProfilePage extends Component {
+  render() {
     return (
       <div className="container text-center">
         <h1>All about me!!!</h1>
@@ -47,15 +47,15 @@ export default class PropsDisplay extends Component {
 }
 
 class Greetings extends Component {
-  render(){
-    if(this.props.signdId){
-    return (
-      <div>
-        <h1>Hi {this.props.name}</h1>
-        <p>My age is {this.props.age}</p>
-      </div>
-    )
-    }else{
+  render() {
+    if (this.props.signdId) {
+      return (
+        <div>
+          <h1>Hi {this.props.name}</h1>
+          <p>My age is {this.props.age}</p>
+        </div>
+      )
+    } else {
       return (
         <div>
           <h1>Identificate 😡😡</h1>
@@ -69,22 +69,22 @@ class App extends Component {
     return (
       <div>
         <h1>SENA - CPIC</h1>
-        <Greetings name = {this.props.completeName} signdId = {false}/>
+        <Greetings name={this.props.completeName} signdId={false} />
       </div>
     )
   }
 }
-class Talker extends Component{
-  hadleClick(){
-    let speech =  ''
+class Talker extends Component {
+  hadleClick() {
+    let speech = ''
     for (let i = 0; i < 10; i++) {
       speech += ' SENA - CPIC -'
     }
     alert(speech)
   }
-  render(){
+  render() {
     return (
-       <Button onClick = {this.hadleClick}/>
+      <Button onClick={this.hadleClick} />
     )
   }
 }
@@ -103,7 +103,46 @@ class ListItems extends Component {
           <li>Gestion agropecuaria</li>
           <li>Gestion Vacuna</li>
         </List>
-      </div>  
+      </div>
+    )
+  }
+}
+class App2 extends Component {
+  constructor(props) {  //Define the constructor of the class
+    super(props)  //Call the constructor of the Component class
+    this.state = { name: 'Juan Felipe Bastidas Bedoya', formation: "ADSO 2497990" , Centro: "CPIC"} //Setear the state
+  }
+  render() {
+    return (
+      <div>
+        <h1>
+          {this.state.name}
+        </h1>
+        <h2>
+          {this.state.formation}&nbsp;{this.state.Centro}
+        </h2>
+      </div>
+    )
+  }
+}
+const green = '#39D1B4'
+const orange = '#FFA500'
+class Toggle extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {color: green }
+    this.state = this.changeColor.bind(this)
+  }
+  changeColor(){
+    const newColor = this.state.color == green ? orange : green
+    this.setState({color: newColor})
+  }
+  render(){
+    return(
+      <div style={{background: this.state.color}}>
+        <h1>Change my color</h1>
+        <button onClick={this.changeColor}>Change color</button>
+      </div>
     )
   }
 }
@@ -115,6 +154,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Greetings name = "Juan Felipe Bastidas Bedoya" age = "18" signdId={true}/>
     <App completeName = "Juan Felipe Bastidas Bedoya"/> */}
     {/* <Talker /> */}
-    <ListItems />
+    {/* <ListItems /> */}
+    <App2 />
+    <Toggle />
   </React.StrictMode>,
 )
