@@ -7,7 +7,7 @@ import Options from './options'
 export default class Card extends Component {
   render() {
     return (
-      <div className='Card'>
+      <div className='Card' id='post'>
         <UserInfo/>
         <Content/>
         <Reaction/>

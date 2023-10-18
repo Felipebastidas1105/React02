@@ -5,7 +5,7 @@ export default class Options extends Component {
     return (
       <div className='Options'>
         <button className='btnIcon'>
-        <box-icon name='cog' color='rgba(239,235,235,0.99)' ></box-icon>
+        <box-icon name='cog' color='#0e2e43' ></box-icon>
         </button>
       </div>
     )

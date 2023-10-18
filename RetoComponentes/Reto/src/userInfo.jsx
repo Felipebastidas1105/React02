@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import Options from './options'
+import data from './data'
+import names from './names'
 
 export default class UserInfo extends Component {
+
   render() {
+    const img = Math.floor(Math.random()*data.length)
+    const ramdonName = Math.floor(Math.random()*names.length)
     return (
       <div className='UserInfo'>
         <div className="Info">
-            <img src="https://www.dzoom.org.es/wp-content/uploads/2020/02/portada-foto-perfil-redes-sociales-consejos.jpg" className='FotoPerfil' alt="logo" />
+            <img src={data[img].url} className='FotoPerfil' alt="logo" />
             <div className="datos">
-            <p className="name">Alisson Beker</p>
+            <p className="name">{names[ramdonName].profileName}</p>
             <p className="date">11 septiembre 2023</p>
             </div>
             <Options/>

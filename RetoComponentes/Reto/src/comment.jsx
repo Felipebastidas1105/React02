@@ -1,48 +1,68 @@
 import React, { Component } from 'react'
 
 export default class Comment extends Component {
-  state = {
-    isModalOpen: false,
-    comment: '',
+  constructor(props) {
+    super(props)
+    this.state = {
+      comments: [],
+      showModal: false,
+      newComment: ''
+    }
+    this.handleOpenModal = this.handleOpenModal.bind(this)
+    this.handleCloseModal = this.handleCloseModal.bind(this)
+    this.handleCommentChange = this.handleCommentChange.bind(this)
+    this.handleAddComment = this.handleAddComment.bind(this)
   }
 
-  handleOpenModal = () => {
-    console.log('Abriendo modal')
-    this.setState({ isModalOpen: true })
+  handleOpenModal() {
+    this.setState({ showModal: true })
   }
 
-  handleCloseModal = () => {
-    console.log('Cerrando modal')
-    this.setState({ isModalOpen: false })
+  handleCloseModal() {
+    this.setState({ showModal: false })
   }
 
-  handleCommentChange = (event) => {
-    this.setState({ comment: event.target.value })
+  handleCommentChange(e) {
+    this.setState({ newComment: e.target.value })
   }
 
-  handleAddComment = () => {
-    console.log(`Agregando comentario: ${this.state.comment}`)
-    this.setState({ comment: '', isModalOpen: false })
+  handleAddComment() {
+    const { comments, newComment } = this.state
+    const newComments = [...comments, newComment]
+    this.setState({ comments: newComments, newComment: '', showModal: false })
   }
 
   render() {
+    const { comments, showModal, newComment } = this.state
     return (
       <>
         <button className="btnIcon" onClick={this.handleOpenModal}>
-          <box-icon name="comment" color="rgba(239,235,235,0.99)"></box-icon>
+          <box-icon name="comment" color="#0e2e43"></box-icon>
         </button>
-        {this.state.isModalOpen && (
+        {showModal && (
           <div className="modal">
-            <div className="modalContent">
-              <textarea
-                value={this.state.comment}
-                onChange={this.handleCommentChange}
-                placeholder="Escribe tu comentario aquí"
-              />
-              <button onClick={this.handleAddComment}>Agregar comentario</button>
-              <button onClick={this.handleCloseModal}>Cancelar</button>
+            <div className="modal-content">
+              <span className="close" onClick={this.handleCloseModal}>&times;</span>
+              <form>
+                <div className="form-group">
+                  <label htmlFor="comment">Agregar comentario:</label>
+                  <textarea
+                    className="form-control"
+                    id="comment"
+                    rows="3"
+                    value={newComment}
+                    onChange={this.handleCommentChange}
+                  ></textarea>
+                </div>
+                <button type="button" className="btn btn-primary" onClick={this.handleAddComment}>Enviar</button>
+              </form>
             </div>
           </div>
+        )}
+        {comments.length > 0 && (
+          <button className="btnIcon" onClick={() => alert(comments.join('\n'))}>
+            <box-icon name="comment-detail" color="#0e2e43"></box-icon>
+          </button>
         )}
       </>
     )
