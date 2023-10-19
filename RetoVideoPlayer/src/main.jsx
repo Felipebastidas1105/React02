@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css'
 
 import { Video } from './video';
 import { Menu } from './menu';
@@ -22,8 +23,8 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h1>Video Player</h1>
+      <div className='main'>
+        <h1 className='tittle'>Animals video player</h1>
         <Menu chooseVideo={this.chooseVideo}/>
         <Video src={this.state.src}/>
       </div>

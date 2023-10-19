@@ -15,5 +15,47 @@
   color: white;
 }
 
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tittle{
+  color: rgb(9, 51, 243);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 60px;
+}
 
+
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.option {
+  display: none;
+}
+
+.option {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0e2e43;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.option:checked + label {
+  background-color: #fff;
+  color: #0e2e43;
+}
+.video-container{
+  width: 100%;
+}
 
